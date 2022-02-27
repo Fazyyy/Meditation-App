@@ -1,0 +1,120 @@
+*,::after,::before{box-sizing:border-box}blockquote,body,dd,dl,figure,h1,h2,h3,h4,p{margin:0}ol[role=list],ul[role=list]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}button,input,select,textarea{font:inherit}@media (prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,::after,::before{animation-duration:0s!important;animation-iteration-count:1!important;transition-duration:0s!important;scroll-behavior:auto!important}}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  z-index: 3;
+  position: relative;
+}
+
+.play {
+  cursor: pointer;
+}
+
+.time-select,
+.sound-picker,
+.player-container {
+  flex: 0 0 33%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.player-container {
+  position: relative;
+}
+
+.player-container svg {
+  position: absolute;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  max-width: 80%;
+}
+
+.time-display {
+  position: absolute;
+  bottom: 10%;
+  color: white;
+  font-size: 50px;
+}
+
+.video-container {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  min-height: 50%;
+  min-width: 50%;
+}
+
+.app:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  content: "";
+  z-index: -1;
+}
+
+.time-select button,
+.sound-picker button {
+  color: white;
+  width: 30%;
+  height: 10%;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 20px;
+  transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.time-select button:hover,
+.sound-picker button:hover {
+  color: black;
+  background: #fff;
+}
+
+.player-container .moving-outline {
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+@media screen and (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+  .time-select,
+  .sound-picker,
+  .player-container {
+    flex: 0 0 33%;
+    width: 80%;
+    height: initial;
+    flex-direction: row;
+  }
+}
