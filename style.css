@@ -118,3 +118,22 @@ body {
     flex-direction: row;
   }
 }
+
+@media screen and (max-width: 590px) {
+  .time-select {
+    flex-direction: row;
+  }
+  .time-select button {
+    padding: 15px;
+    flex: 0 0 33%;
+    margin: 0 15px;
+    width: initial;
+    height: initial;
+  }
+  .player-container .play {
+    width: 20%;
+  }
+  h3.time-display {
+    margin-bottom: -50px;
+  }
+}
